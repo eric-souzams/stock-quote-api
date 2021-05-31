@@ -1,6 +1,7 @@
 package com.project.stockquote.service;
 
 import com.project.stockquote.exceptions.BusinessException;
+import com.project.stockquote.exceptions.NotFoundException;
 import com.project.stockquote.mapper.StockMapper;
 import com.project.stockquote.model.Stock;
 import com.project.stockquote.model.dto.StockDTO;
@@ -10,7 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class StockService {
@@ -31,5 +34,29 @@ public class StockService {
         Stock stock = mapper.toEntity(stockDTO);
         stockRepository.save(stock);
         return mapper.toDTO(stock);
+    }
+
+    @Transactional
+    public StockDTO update(StockDTO stockDTO) {
+        Optional<Stock> optionalStock = stockRepository.findByStockUpdate(stockDTO.getName(), stockDTO.getDate(), stockDTO.getId());
+        if (optionalStock.isPresent()) {
+            throw new BusinessException(MessageUtils.STOCK_ALREADY_EXITS);
+        }
+
+        Stock stock = mapper.toEntity(stockDTO);
+        stockRepository.save(stock);
+        return mapper.toDTO(stock);
+    }
+
+    @Transactional(readOnly = true)
+    public List<StockDTO> findAll() {
+        List<Stock> resultList = stockRepository.findAll();
+
+        return mapper.toDTO(resultList);
+    }
+
+    @Transactional(readOnly = true)
+    public StockDTO findById(Long id) {
+        return stockRepository.findById(id).map(mapper::toDTO).orElseThrow(NotFoundException::new);
     }
 }
