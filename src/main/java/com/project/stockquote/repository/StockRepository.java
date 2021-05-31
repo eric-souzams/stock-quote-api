@@ -1,7 +1,6 @@
 package com.project.stockquote.repository;
 
 import com.project.stockquote.model.Stock;
-import com.project.stockquote.model.dto.StockDTO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
