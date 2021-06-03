@@ -11,7 +11,7 @@
 </p>
 
 ## About
-<strong>Stock Quote</strong> is a platform for daily monitoring of stock variations available on the market.
+<strong>Stock Quote</strong> is a API for daily monitoring of stock variations available on the market.
 
 
 ## Preview
