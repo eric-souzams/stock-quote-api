@@ -13,13 +13,60 @@
 ## About
 <strong>Stock Quote</strong> is a platform for daily monitoring of stock variations available on the market.
 
+
 ## Preview
+
+#### Swagger
 ```
 http://localhost:8080/swagger-ui.html
 ```
 <p align="center">
-  <img src="./public/stockscreen.png" />
+  <img src="./public/1.png" />
 </p>
+
+#### Stock Methods
+```
+GET: http://localhost:8080/stock
+```
+<p align="center">
+  <img src="./public/2.png" />
+</p>
+
+```
+PUT: http://localhost:8080/stock
+```
+<p align="center">
+  <img src="./public/3.png" />
+</p>
+
+```
+POST: http://localhost:8080/stock
+```
+<p align="center">
+  <img src="./public/4.png" />
+</p>
+
+```
+GET: http://localhost:8080/stock/{id}
+```
+<p align="center">
+  <img src="./public/5.png" />
+</p>
+
+```
+DELETE: http://localhost:8080/stock/{id}
+```
+<p align="center">
+  <img src="./public/6.png" />
+</p>
+
+```
+GET: http://localhost:8080/stock/today
+```
+<p align="center">
+  <img src="./public/7.png" />
+</p>
+
 
 ## Technologies
 This project was developed using the following technologies:
@@ -27,6 +74,7 @@ This project was developed using the following technologies:
 - [Java](https://www.oracle.com/br/java/technologies/javase-jdk11-downloads.html)
 - [JPA + Hibernate](https://spring.io/projects/spring-data-jpa)
 - [Postgres](https://www.postgresql.org/)
+
 
 ## Building
 You'll need [Java 11+](https://www.oracle.com/br/java/technologies/javase-jdk11-downloads.html) and [Maven](https://maven.apache.org/download.cgi) installed on your computer in order to build this app.
@@ -36,10 +84,6 @@ $ cd /stock-quote-api
 $ mvn spring-boot:run
 ```
 
-After executing the command above, just open the following address and view the execution of the project:
-```
-http://localhost:8080/stock
-```
 
 ## Contributing
 
