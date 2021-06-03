@@ -14,6 +14,9 @@
 <strong>Stock Quote</strong> is a platform for daily monitoring of stock variations available on the market.
 
 ## Preview
+```
+http://localhost:8080/swagger-ui.html
+```
 <p align="center">
   <img src="./public/stockscreen.png" />
 </p>
@@ -36,8 +39,6 @@ $ mvn spring-boot:run
 After executing the command above, just open the following address and view the execution of the project:
 ```
 http://localhost:8080/stock
-
-http://localhost:8080/swagger-ui.html
 ```
 
 ## Contributing
